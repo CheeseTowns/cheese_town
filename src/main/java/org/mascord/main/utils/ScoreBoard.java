@@ -16,7 +16,12 @@ import java.util.UUID;
 
 public class ScoreBoard implements Listener {
     private final Map<UUID, FastBoard> boards = new HashMap<>();
-    private final String[] animatedTitles = {"§e§l마", "§e§l마스", "§e§l마스코", "§e§l마스코드", "§e§l마스코드", "§e§l마스코드", "§e§l마스코드", "§l§f마§e스코드", "§e§l마§f스§e코드", "§e§l마스§f코§e드", "§e§l마스코드", "§e§l마스코드", "§e§l마스코드"};
+    private final String[] animatedTitles = {
+            "§e§l피", "§e§l피로", "§e§l피로 서", "§e§l피로 서버",
+            "§e§l피로 서버", "§e§l피로 서버", "§e§l피로 서버",
+            "§l§f피§e로 서버", "§e§l피§f로 §e서버",
+            "§e§l피로§f 서§e버", "§e§l피로 서버", "§e§l피로 서버", "§e§l피로 서버"
+    };
 
     public ScoreBoard(Main plugin) {
         // 생성자
