@@ -17,10 +17,10 @@ import java.util.UUID;
 public class ScoreBoard implements Listener {
     private final Map<UUID, FastBoard> boards = new HashMap<>();
     private final String[] animatedTitles = {
-            "§e§l피", "§e§l피로", "§e§l피로 서", "§e§l피로 서버",
-            "§e§l피로 서버", "§e§l피로 서버", "§e§l피로 서버",
-            "§l§f피§e로 서버", "§e§l피§f로 §e서버",
-            "§e§l피로§f 서§e버", "§e§l피로 서버", "§e§l피로 서버", "§e§l피로 서버"
+            "§e피", "§e피로", "§e피로 서", "§e피로 서버",
+            "§e피로 서버", "§e피로 서버", "§e피로 서버",
+            "§f피§e로 서버", "§e피§f로 §e서버",
+            "§e피로§f 서§e버", "§e피로 서§f버", "§e피로 서버", "§e피로 서버", "§e피로 서버"
     };
 
     public ScoreBoard(Main plugin) {
@@ -42,7 +42,7 @@ public class ScoreBoard implements Listener {
             for (FastBoard board : boards.values()) {
                 animateBoardTitle(board);
             }
-        }, 0L, 16L); // 8틱마다 타이틀이 바뀌도록 설정
+        }, 0L, 12L); // 8틱마다 타이틀이 바뀌도록 설정
     }
 
     @EventHandler
