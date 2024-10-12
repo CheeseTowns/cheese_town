@@ -15,10 +15,18 @@ repositories {
         name = "sonatype"
         url = "https://oss.sonatype.org/content/groups/public/"
     }
+    // VaultAPI를 위해 필요한 저장소 추가
+    maven {
+        name = "vault-repo"
+        url = "https://jitpack.io"
+    }
 }
 
 dependencies {
     compileOnly("io.papermc.paper:paper-api:1.21.1-R0.1-SNAPSHOT")
+
+    // VaultAPI 의존성 추가
+    compileOnly("com.github.MilkBowl:VaultAPI:1.7")
 }
 
 def targetJavaVersion = 21
