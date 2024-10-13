@@ -1,8 +1,5 @@
 package org.mascord.main.utils;
 
-
-import com.mongodb.client.MongoCollection;
-import com.mongodb.client.model.Filters;
 import org.bson.Document;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
@@ -20,6 +17,7 @@ import java.util.Map;
 import java.util.UUID;
 
 public class ScoreBoard implements Listener {
+    UserAPI UserAPI = new UserAPI();
     private final Map<UUID, FastBoard> boards = new HashMap<>();
     private final String[] animatedTitles = {
             "§e피", "§e피로", "§e피로 서", "§e피로 서버",
@@ -38,7 +36,7 @@ public class ScoreBoard implements Listener {
                 UUID playerUUID = player.getUniqueId();
 
                 // MongoDB에서 해당 플레이어의 money와 cheese 값 가져오기
-                Document playerData = new UserAPI().getPlayerData(playerUUID);
+                Document playerData = UserAPI.getPlayerData(playerUUID);
 
                 if (playerData != null) {
                     int money = playerData.getInteger("money", 0);  // 기본값 0

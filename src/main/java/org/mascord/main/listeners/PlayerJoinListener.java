@@ -7,10 +7,12 @@ import org.mascord.main.api.UserAPI;
 import java.util.UUID;
 
 public class PlayerJoinListener implements Listener {
+    UserAPI UserAPI = new UserAPI();
+
     @EventHandler
     public void onPlayerJoin(PlayerJoinEvent event) {
         System.out.println("플레이어 " + event.getPlayer().getName() + "님이 서버에 접속하였습니다.");
-        UserAPI UserAPI = new UserAPI();
+
         // 플레이어가 접속했을 때 로깅
         System.out.println("플레이어 " + event.getPlayer().getName() + "님이 서버에 접속하였습니다.");
         
