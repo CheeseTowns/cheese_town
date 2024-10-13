@@ -13,18 +13,14 @@ public final class Main extends JavaPlugin implements Listener {
 
     @Override
     public void onEnable() {
-//        mongoManager = new mongodb();
-//        mongoManager.connect("mongodb+srv://mascord:DefaultPassword@mascord.iob4z.mongodb.net/", "mascord");
-        // MascordLogger 인스턴스 초기화
-//        MascordLogger.init(getLogger());
-//
-//        MascordLogger.info("플러그인 활성화 및 MongoDB 연결 완료");
+        mongoManager = new mongodb();
+        mongoManager.connect("mongodb+srv://mascord:DefaultPassword@mascord.iob4z.mongodb.net/", "mydb");
 
         // 이벤트 등록
-        getServer().getPluginManager().registerEvents(new PlayerJoinListener(), this);
+        getServer().getPluginManager().registerEvents(new PlayerJoinListener(mongoManager), this);
 
         // Event
-        new ScoreBoard(this);
+        new ScoreBoard(this, mongoManager);
         // Commands
         getCommand("귓").setExecutor(new Whisper());
     }

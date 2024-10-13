@@ -1,6 +1,8 @@
 package org.mascord.main.utils;
 
-import fr.mrmicky.fastboard.FastBoard;
+import com.mongodb.client.MongoCollection;
+import com.mongodb.client.model.Filters;
+import org.bson.Document;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
@@ -9,6 +11,8 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.event.player.PlayerQuitEvent;
 import org.mascord.main.Main;
+import fr.mrmicky.fastboard.FastBoard;
+import org.mascord.main.utils.mongodb;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -23,21 +27,36 @@ public class ScoreBoard implements Listener {
             "§e피로§f 서§e버", "§e피로 서§f버", "§e피로 서버", "§e피로 서버", "§e피로 서버"
     };
 
-    public ScoreBoard(Main plugin) {
-        // 생성자
+    private final mongodb mongoManager;
+
+    public ScoreBoard(Main plugin, mongodb mongoManager) {
+        this.mongoManager = mongoManager;  // MongoDB 매니저 초기화
         Bukkit.getPluginManager().registerEvents(this, plugin);
 
+        // 플레이어 보드 업데이트 스케줄러
         plugin.getServer().getScheduler().scheduleSyncRepeatingTask(plugin, () -> {
             for (FastBoard board : boards.values()) {
-                updateBoard(board,
-                        "",
-                        "§e소지금: 170,282,000我",
-                        "치즈: 153,920上",
-                        "",
-                        "총 접속자: 安 " + Bukkit.getOnlinePlayers().size() + " 명",
-                        "",
-                        "현재 서버: 升 야생 채널#1"
-                );
+                Player player = board.getPlayer();
+                UUID playerUUID = player.getUniqueId();
+
+                // MongoDB에서 해당 플레이어의 money와 cheese 값 가져오기
+                Document playerData = getPlayerDataFromDB(playerUUID);
+
+                if (playerData != null) {
+                    int money = playerData.getInteger("money", 0);  // 기본값 0
+                    int cheese = playerData.getInteger("cheese", 0);  // 기본값 0
+
+                    // 스코어보드 업데이트
+                    updateBoard(board,
+                            "",
+                            "我 §e소지금: " + money,  // MongoDB에서 가져온 money 값
+                            "上 치즈: " + cheese,     // MongoDB에서 가져온 cheese 값
+                            "",
+                            "총 접속자: 安 " + Bukkit.getOnlinePlayers().size() + " 명",
+                            "",
+                            "현재 서버: 升 야생 채널#1"
+                    );
+                }
             }
         }, 0L, 10L);
 
@@ -46,7 +65,7 @@ public class ScoreBoard implements Listener {
             for (FastBoard board : boards.values()) {
                 animateBoardTitle(board);
             }
-        }, 0L, 12L); // 8틱마다 타이틀이 바뀌도록 설정
+        }, 0L, 12L);  // 8틱마다 타이틀이 바뀌도록 설정
     }
 
     @EventHandler
@@ -85,5 +104,11 @@ public class ScoreBoard implements Listener {
 
         // 타이틀 배열의 끝까지 도달하면 다시 처음으로
         titleIndex = (titleIndex + 1) % animatedTitles.length;
+    }
+
+    // MongoDB에서 플레이어 데이터를 가져오는 메서드
+    private Document getPlayerDataFromDB(UUID playerUUID) {
+        MongoCollection<Document> collection = mongoManager.getDatabase().getCollection("players");
+        return collection.find(Filters.eq("uuid", playerUUID.toString())).first();
     }
 }
