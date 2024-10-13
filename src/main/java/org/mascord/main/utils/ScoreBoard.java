@@ -49,12 +49,12 @@ public class ScoreBoard implements Listener {
                     // 스코어보드 업데이트
                     updateBoard(board,
                             "",
-                            "我 §e소지금: " + money,  // MongoDB에서 가져온 money 값
-                            "上 치즈: " + cheese,     // MongoDB에서 가져온 cheese 값
+                            "我 §e" + money + "원",  // MongoDB에서 가져온 money 값
+                            "上 " + cheese + "치즈",     // MongoDB에서 가져온 cheese 값
                             "",
-                            "총 접속자: 安 " + Bukkit.getOnlinePlayers().size() + " 명",
+                            "安 접속자: " + Bukkit.getOnlinePlayers().size() + " 명",
                             "",
-                            "현재 서버: 升 야생 채널#1"
+                            "升 월드: 야생 채널#1"
                     );
                 }
             }
