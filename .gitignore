@@ -1,3 +1,4 @@
 # Ignore Gradle build folder
 /build/
 /out/
+/.gradle/
