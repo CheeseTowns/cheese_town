@@ -31,8 +31,13 @@ public class ScoreBoard implements Listener {
             for (FastBoard board : boards.values()) {
                 updateBoard(board,
                         "",
-                        "§l§a소지금: 170,282원",
-                        "총 접속자: " + Bukkit.getOnlinePlayers().size() + " 명"
+                        "§e소지금: 我 170,282,000원",
+                        "치즈: 上 153,920개",
+                        "루비: 響 3개",
+                        "",
+                        "총 접속자: 安 " + Bukkit.getOnlinePlayers().size() + " 명",
+                        "",
+                        "현재 서버: 升 야생 채널#1"
                 );
             }
         }, 0L, 10L);
