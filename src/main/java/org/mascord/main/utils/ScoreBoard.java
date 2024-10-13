@@ -38,10 +38,12 @@ public class ScoreBoard implements Listener {
                 // MongoDB에서 해당 플레이어의 money와 cheese 값 가져오기
                 Document playerData = UserAPI.getPlayerData(playerUUID);
 
+                System.out.println(playerData);
                 if (playerData != null) {
                     int money = playerData.getInteger("money", 0);  // 기본값 0
                     int cheese = playerData.getInteger("cheese", 0);  // 기본값 0
 
+                    System.out.println("플레이어 " + player.getName() + "의 돈: " + money + "원");
                     // 스코어보드 업데이트
                     updateBoard(board,
                             "",

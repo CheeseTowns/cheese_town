@@ -11,6 +11,10 @@ public final class Main extends JavaPlugin implements Listener {
 
     @Override
     public void onEnable() {
+        // MongoDB 연결
+        MongoDB mongoManager = MongoDB.getInstance();
+        mongoManager.connect("mongodb+srv://mascord:DefaultPassword@mascord.iob4z.mongodb.net/", "mydb");
+
         // 이벤트 등록
         getServer().getPluginManager().registerEvents(new PlayerJoinListener(), this);
 
