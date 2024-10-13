@@ -1,5 +1,6 @@
 package org.mascord.main.utils;
 
+
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.model.Filters;
 import org.bson.Document;
@@ -12,7 +13,7 @@ import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.event.player.PlayerQuitEvent;
 import org.mascord.main.Main;
 import fr.mrmicky.fastboard.FastBoard;
-import org.mascord.main.utils.mongodb;
+import org.mascord.main.api.UserAPI;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -27,10 +28,7 @@ public class ScoreBoard implements Listener {
             "§e피로§f 서§e버", "§e피로 서§f버", "§e피로 서버", "§e피로 서버", "§e피로 서버"
     };
 
-    private final mongodb mongoManager;
-
-    public ScoreBoard(Main plugin, mongodb mongoManager) {
-        this.mongoManager = mongoManager;  // MongoDB 매니저 초기화
+    public ScoreBoard(Main plugin) {
         Bukkit.getPluginManager().registerEvents(this, plugin);
 
         // 플레이어 보드 업데이트 스케줄러
@@ -40,7 +38,7 @@ public class ScoreBoard implements Listener {
                 UUID playerUUID = player.getUniqueId();
 
                 // MongoDB에서 해당 플레이어의 money와 cheese 값 가져오기
-                Document playerData = getPlayerDataFromDB(playerUUID);
+                Document playerData = new UserAPI().getPlayerData(playerUUID);
 
                 if (playerData != null) {
                     int money = playerData.getInteger("money", 0);  // 기본값 0
@@ -104,11 +102,5 @@ public class ScoreBoard implements Listener {
 
         // 타이틀 배열의 끝까지 도달하면 다시 처음으로
         titleIndex = (titleIndex + 1) % animatedTitles.length;
-    }
-
-    // MongoDB에서 플레이어 데이터를 가져오는 메서드
-    private Document getPlayerDataFromDB(UUID playerUUID) {
-        MongoCollection<Document> collection = mongoManager.getDatabase().getCollection("players");
-        return collection.find(Filters.eq("uuid", playerUUID.toString())).first();
     }
 }
