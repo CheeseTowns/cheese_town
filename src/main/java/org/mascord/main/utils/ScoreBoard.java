@@ -31,8 +31,8 @@ public class ScoreBoard implements Listener {
             for (FastBoard board : boards.values()) {
                 updateBoard(board,
                         "",
-                        "§e소지금: 170,282,000我",
-                        "치즈: 153,920上",
+                        "§e소지금: 170,282,000 §r我",
+                        "치즈: 153,920 上",
                         "",
                         "총 접속자: 安 " + Bukkit.getOnlinePlayers().size() + " 명",
                         "",
