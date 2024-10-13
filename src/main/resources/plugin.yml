@@ -2,3 +2,8 @@ name: main
 version: 1.0.0
 main: org.mascord.main.Main
 api-version: '1.21'
+commands:
+  귓:
+    description: 귓속말을 보냅니다
+    usage: /귓 <플레이어> <메시지>
+    permission: main.whisper
