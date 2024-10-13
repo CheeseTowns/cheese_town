@@ -4,17 +4,13 @@ import org.bukkit.event.Listener;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.mascord.main.commands.Whisper;
 import org.mascord.main.listeners.PlayerJoinListener;
-import org.mascord.main.utils.ScoreBoard;
 import org.mascord.main.utils.MongoDB;
+import org.mascord.main.utils.ScoreBoard;
 
 public final class Main extends JavaPlugin implements Listener {
 
     @Override
     public void onEnable() {
-        // MongoDB 싱글톤 인스턴스 가져오기
-        MongoDB mongoManager = MongoDB.getInstance();
-        mongoManager.connect("mongodb+srv://mascord:DefaultPassword@mascord.iob4z.mongodb.net/", "mydb");
-
         // 이벤트 등록
         getServer().getPluginManager().registerEvents(new PlayerJoinListener(), this);
 

@@ -10,7 +10,10 @@ public class MongoDB {
     private MongoDatabase database;
 
     // private 생성자: 외부에서 인스턴스 생성을 막기 위해 사용
-    private MongoDB() {}
+    private MongoDB() {
+        MongoDB mongoManager = MongoDB.getInstance();
+        mongoManager.connect("mongodb+srv://mascord:DefaultPassword@mascord.iob4z.mongodb.net/", "mydb");
+    }
 
     // 싱글톤 인스턴스를 반환하는 메서드
     public static MongoDB getInstance() {
