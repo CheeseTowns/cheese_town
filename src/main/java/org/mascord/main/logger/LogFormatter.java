@@ -38,8 +38,6 @@ public class LogFormatter extends Formatter {
         // 시간, 레벨, 메시지에 대한 색상 적용
         builder.append(color)
                 .append("[")
-                .append(dateFormat.format(new Date(record.getMillis())))
-                .append(" ")
                 .append(record.getLevel().getLocalizedName())
                 .append("]")
                 .append(RESET)  // 색상 리셋
