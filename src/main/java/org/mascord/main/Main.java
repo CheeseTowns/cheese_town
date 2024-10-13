@@ -23,7 +23,10 @@ public final class Main extends JavaPlugin implements Listener {
         // 이벤트 등록
         getServer().getPluginManager().registerEvents(new PlayerJoinListener(), this);
 
+        // Event
         new ScoreBoard(this);
+        // Commands
+        getCommand("귓").setExecutor(new Whisper());
     }
 
     @Override
