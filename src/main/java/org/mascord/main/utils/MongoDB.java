@@ -47,15 +47,5 @@ public class MongoDB {
         }
     }
 
-    public void saveUserData(String uuid, String playerName, int money, int cheese) {
-        MongoCollection<Document> collection = database.getCollection("players");
 
-        Document playerData = new Document("uuid", uuid)
-                .append("playerName", playerName)
-                .append("money", money)
-                .append("cheese", cheese);
-
-        collection.insertOne(playerData); // 데이터를 컬렉션에 저장
-        System.out.println("유저 데이터 저장 완료: " + playerName);
-    }
 }
