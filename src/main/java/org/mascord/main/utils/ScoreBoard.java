@@ -54,7 +54,7 @@ public class ScoreBoard implements Listener {
                     );
                 }
             }
-        }, 0L, 10L);
+        }, 0L, 30L);
 
         // 타이틀 애니메이션을 위한 스케줄러
         plugin.getServer().getScheduler().scheduleSyncRepeatingTask(plugin, () -> {
