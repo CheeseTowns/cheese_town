@@ -45,8 +45,8 @@ public class ScoreBoard implements Listener {
                     // 스코어보드 업데이트
                     updateBoard(board,
                             "",
-                            "我 §e" + money + "원",  // MongoDB에서 가져온 money 값
-                            "上 " + cheese + "치즈",     // MongoDB에서 가져온 cheese 값
+                            "我 §e" + Format.NumberCommaFormat(money) + "원",  // MongoDB에서 가져온 money 값
+                            "上 " + Format.NumberCommaFormat(cheese) + "치즈",     // MongoDB에서 가져온 cheese 값
                             "",
                             "安 접속자: " + Bukkit.getOnlinePlayers().size() + " 명",
                             "",
