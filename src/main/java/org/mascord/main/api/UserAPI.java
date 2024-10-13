@@ -2,7 +2,6 @@ package org.mascord.main.api;
 
 import com.mongodb.client.model.Filters;
 import org.bson.Document;
-import org.mascord.main.logger.MascordLogger;
 import com.mongodb.client.MongoCollection;
 import org.mascord.main.utils.MongoDB;
 
@@ -14,7 +13,7 @@ public class UserAPI {
     public UserAPI() {
         this.mongoManager = MongoDB.getInstance();
 
-        MascordLogger.info("UserAPI 인스턴스 생성됨.");
+        System.out.println("UserAPI 인스턴스 생성됨.");
     }
 
     // MongoDB에서 플레이어 데이터를 가져오는 메서드
@@ -38,7 +37,7 @@ public class UserAPI {
                 .append("cheese", 0);
 
         collection.insertOne(playerData); // 데이터를 컬렉션에 저장
-        MascordLogger.info("새 유저 데이터 저장: " + playerName);
+        System.out.println("새 유저 데이터 저장: " + playerName);
         return playerData;
     }
 
