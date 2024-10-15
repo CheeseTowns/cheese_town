@@ -1,6 +1,6 @@
-name: main
+name: town_main
 version: 1.0.0
-main: org.mascord.main.Main
+main: org.cheese.town.Main
 api-version: '1.21'
 commands:
   귓:

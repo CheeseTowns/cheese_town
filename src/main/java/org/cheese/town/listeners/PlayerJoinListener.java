@@ -1,9 +1,10 @@
-package org.mascord.main.listeners;
+package org.cheese.town.listeners;
 
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
-import org.mascord.main.api.UserAPI;
+import org.cheese.town.api.UserAPI;
+
 import java.util.UUID;
 
 public class PlayerJoinListener implements Listener {

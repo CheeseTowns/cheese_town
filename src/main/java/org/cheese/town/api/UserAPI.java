@@ -1,9 +1,10 @@
-package org.mascord.main.api;
+package org.cheese.town.api;
 
+import com.mongodb.client.MongoCollection;
 import com.mongodb.client.model.Filters;
 import org.bson.Document;
-import com.mongodb.client.MongoCollection;
-import org.mascord.main.utils.MongoDB;
+import org.cheese.town.utils.MongoDB;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.UUID;
 
@@ -31,7 +32,7 @@ public class UserAPI {
     }
 
     // 서버 처음 접속시 플레이어 데이터를 초기화하는 메서드
-    public Document initializePlayerData(UUID playerUUID, String playerName) {
+    public void initializePlayerData(@NotNull UUID playerUUID, String playerName) {
         System.out.println("(UserAPI.initializePlayerData) 새 유저 데이터 initialize: " + playerUUID + ", " + playerName);
         MongoCollection<Document> collection = mongoManager.getDatabase().getCollection("players");
         Document playerData = new Document("uuid", playerUUID.toString())
@@ -41,7 +42,6 @@ public class UserAPI {
 
         collection.insertOne(playerData); // 데이터를 컬렉션에 저장
         System.out.println("(UserAPI.initializePlayerData) 새 유저 데이터 initialize 완료: " + playerUUID + ", " + playerName);
-        return playerData;
     }
 
     // 유저가 존재하는지 확인하는 함수

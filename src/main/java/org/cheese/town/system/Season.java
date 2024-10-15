@@ -1,11 +1,10 @@
-package org.mascord.main.system;
+package org.cheese.town.system;
 
 import org.bukkit.Bukkit;
-import org.bukkit.Color;
+import org.bukkit.World;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.Plugin;
 import org.bukkit.scheduler.BukkitRunnable;
-import org.bukkit.World;
 
 public class Season {
     private static Season instance;
@@ -101,7 +100,6 @@ public class Season {
             case SUMMER -> "여름";
             case AUTUMN -> "가을";
             case WINTER -> "겨울";
-            default -> "계절을 불러오지 못함";
         };
     }
 
@@ -111,7 +109,6 @@ public class Season {
             case SUMMER -> "§e";
             case AUTUMN -> "§6";
             case WINTER -> "§b";
-            default -> "§c";
         };
     }
 

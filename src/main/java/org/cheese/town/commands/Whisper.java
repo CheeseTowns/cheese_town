@@ -1,4 +1,4 @@
-package org.mascord.main.commands;
+package org.cheese.town.commands;
 
 import org.bukkit.Bukkit;
 import org.bukkit.command.Command;

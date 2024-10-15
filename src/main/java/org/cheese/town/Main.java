@@ -1,12 +1,12 @@
-package org.mascord.main;
+package org.cheese.town;
 
 import org.bukkit.event.Listener;
 import org.bukkit.plugin.java.JavaPlugin;
-import org.mascord.main.commands.Whisper;
-import org.mascord.main.listeners.PlayerJoinListener;
-import org.mascord.main.system.Season;
-import org.mascord.main.utils.MongoDB;
-import org.mascord.main.utils.ScoreBoard;
+import org.cheese.town.commands.Whisper;
+import org.cheese.town.listeners.PlayerJoinListener;
+import org.cheese.town.system.Season;
+import org.cheese.town.utils.MongoDB;
+import org.cheese.town.utils.ScoreBoard;
 
 public final class Main extends JavaPlugin implements Listener {
     private static Main instance;

@@ -1,4 +1,4 @@
-package org.mascord.main.utils;
+package org.cheese.town.utils;
 
 public class Format {
     public static String NumberCommaFormat(int number) {

@@ -3,7 +3,7 @@ plugins {
     id 'com.gradleup.shadow' version '8.3.0'
 }
 
-group = 'org.mascord'
+group = 'org.cheese.town'
 version = '1.0-SNAPSHOT'
 
 repositories {
@@ -31,7 +31,7 @@ dependencies {
     implementation 'fr.mrmicky:fastboard:2.1.3'
 }
 
-def targetJavaVersion = 21
+def targetJavaVersion = 23
 java {
     def javaVersion = JavaVersion.toVersion(targetJavaVersion)
     sourceCompatibility = javaVersion
@@ -59,7 +59,7 @@ processResources {
 }
 
 shadowJar {
-    relocate 'fr.mrmicky.fastboard', 'org.mascord.fastboard'
+    relocate 'fr.mrmicky.fastboard', 'org.cheese.town.fastboard'
 
     dependencies {
         exclude(dependency("io.papermc.paper:paper-api:1.21.1-R0.1-SNAPSHOT"))

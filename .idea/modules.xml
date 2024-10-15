@@ -2,9 +2,11 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/cheese_town.main.iml" filepath="$PROJECT_DIR$/.idea/modules/cheese_town.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/mascord_mc.iml" filepath="$PROJECT_DIR$/.idea/modules/mascord_mc.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/mascord_mc.main.iml" filepath="$PROJECT_DIR$/.idea/modules/mascord_mc.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/mascord_mc.test.iml" filepath="$PROJECT_DIR$/.idea/modules/mascord_mc.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/org.cheese.town.cheese_town.main.iml" filepath="$PROJECT_DIR$/.idea/modules/org.cheese.town.cheese_town.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/org.mascord.mascord_mc.main.iml" filepath="$PROJECT_DIR$/.idea/modules/org.mascord.mascord_mc.main.iml" />
     </modules>
   </component>

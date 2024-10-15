@@ -1,5 +1,6 @@
-package org.mascord.main.utils;
+package org.cheese.town.utils;
 
+import fr.mrmicky.fastboard.FastBoard;
 import org.bson.Document;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
@@ -8,10 +9,9 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.event.player.PlayerQuitEvent;
-import org.mascord.main.Main;
-import fr.mrmicky.fastboard.FastBoard;
-import org.mascord.main.api.UserAPI;
-import org.mascord.main.system.Season;
+import org.cheese.town.Main;
+import org.cheese.town.api.UserAPI;
+import org.cheese.town.system.Season;
 
 import java.util.HashMap;
 import java.util.Map;

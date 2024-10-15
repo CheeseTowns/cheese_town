@@ -1,6 +1,6 @@
-package org.mascord.main.api;
+package org.cheese.town.api;
 
-import org.mascord.main.utils.MongoDB;
+import org.cheese.town.utils.MongoDB;
 
 public class EconomyAPI {
     private final MongoDB mongoManager;
