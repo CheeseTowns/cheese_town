@@ -64,4 +64,6 @@ shadowJar {
     dependencies {
         exclude(dependency("io.papermc.paper:paper-api:1.21.1-R0.1-SNAPSHOT"))
     }
+
+    destinationDirectory.set(file("C:\\Users\\chosu\\Desktop\\마크 서버\\mascord\\plugins"))
 }
