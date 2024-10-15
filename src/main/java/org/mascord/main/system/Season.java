@@ -1,10 +1,15 @@
 package org.mascord.main.system;
 
 import org.bukkit.Bukkit;
+import org.bukkit.configuration.file.FileConfiguration;
+import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.Plugin;
 import org.bukkit.scheduler.BukkitRunnable;
 import org.bukkit.World;
+
+import java.io.File;
+import java.io.IOException;
 
 public class Season {
     private static Season instance;
@@ -12,11 +17,16 @@ public class Season {
     private SeasonType currentSeason;
     private final int DAYS_PER_SEASON = 90;
     private final Plugin plugin;
+    private final FileConfiguration customConfig;
+    private final File customConfigFile;
 
     private Season(Plugin plugin) {
         this.plugin = plugin;
-        this.currentDay = plugin.getConfig().getInt("currentDay", 0);
-        this.currentSeason = SeasonType.valueOf(plugin.getConfig().getString("currentSeason", SeasonType.SPRING.name()));
+        this.customConfigFile = new File(plugin.getDataFolder(), "seasons.yml"); // seasons.yml 파일 생성
+        this.customConfig = YamlConfiguration.loadConfiguration(customConfigFile);
+
+        this.currentDay = customConfig.getInt("currentDay", 0);
+        this.currentSeason = SeasonType.valueOf(customConfig.getString("currentSeason", SeasonType.SPRING.name()));
 
         // 스케줄링을 설정
         scheduleSeasonUpdate();
@@ -34,10 +44,6 @@ public class Season {
             @Override
             public void run() {
                 World world = Bukkit.getWorlds().getFirst(); // 기본 월드 사용
-                /*
-                조건문이 world.getTime() == 0 이면 빠르게 변화하는 틱이 1초 마다 한번씩 실행하는 if문에 걸리지 않을 수 있어서
-                world.getTime() < 20으로 변경하여 20틱(1초) 조금 더 여유롭게 시간을 확인하도록 수정
-                */
                 if (world.getTime() < 0 || world.getTime() < 20) {
                     updateDayAndSeason();
                 }
@@ -85,9 +91,13 @@ public class Season {
     }
 
     private void saveSeasonData() {
-        plugin.getConfig().set("currentDay", currentDay);
-        plugin.getConfig().set("currentSeason", currentSeason.toString());
-        plugin.saveConfig();
+        customConfig.set("currentDay", currentDay);
+        customConfig.set("currentSeason", currentSeason.toString());
+        try {
+            customConfig.save(customConfigFile); // seasons.yml에 저장
+        } catch (IOException e) {
+            System.out.println("§c[Season] seasons.yml 파일에 저장하는 중 오류가 발생했습니다.");
+        }
     }
 
     public enum SeasonType {
