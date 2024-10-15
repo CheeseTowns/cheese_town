@@ -20,10 +20,11 @@ public class ScoreBoard implements Listener {
     UserAPI UserAPI = new UserAPI();
     private final Map<UUID, FastBoard> boards = new HashMap<>();
     private final String[] animatedTitles = {
-            "§e피", "§e피로", "§e피로 서", "§e피로 서버",
-            "§e피로 서버", "§e피로 서버", "§e피로 서버",
-            "§f피§e로 서버", "§e피§f로 §e서버",
-            "§e피로§f 서§e버", "§e피로 서§f버", "§e피로 서버", "§e피로 서버", "§e피로 서버"
+            "§e치", "§e치즈", "§e치즈 타", "§e치즈 타운",
+            "§e치즈 타운", "§e치즈 타운", "§e치즈 타운",
+            "§f치§e즈 타운", "§e치§f즈 타§e운", "§e치즈 타§f운",
+            "§f치즈 타운", "§e치즈 타운", "§f치즈 타운", "§e치즈 타운",
+            "§e치즈 타운", "§e치즈 타운"
     };
 
     public ScoreBoard(Main plugin) {
