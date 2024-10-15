@@ -1,7 +1,6 @@
 package org.mascord.main.system;
 
 import org.bukkit.Bukkit;
-import org.bukkit.Color;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.Plugin;
 import org.bukkit.scheduler.BukkitRunnable;
