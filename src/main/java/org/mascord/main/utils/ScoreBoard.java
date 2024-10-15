@@ -11,6 +11,7 @@ import org.bukkit.event.player.PlayerQuitEvent;
 import org.mascord.main.Main;
 import fr.mrmicky.fastboard.FastBoard;
 import org.mascord.main.api.UserAPI;
+import org.mascord.main.system.Season;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -18,6 +19,7 @@ import java.util.UUID;
 
 public class ScoreBoard implements Listener {
     UserAPI UserAPI = new UserAPI();
+    Season season = Season.getInstance(Main.getInstance());
     private final Map<UUID, FastBoard> boards = new HashMap<>();
     private final String[] animatedTitles = {
             "§e치", "§e치즈", "§e치즈 타", "§e치즈 타운",
@@ -46,12 +48,14 @@ public class ScoreBoard implements Listener {
                     // 스코어보드 업데이트
                     updateBoard(board,
                             "",
-                            "我 §e" + Format.NumberCommaFormat(money) + "원",  // MongoDB에서 가져온 money 값
-                            "上 " + Format.NumberCommaFormat(cheese) + "치즈",     // MongoDB에서 가져온 cheese 값
+                            "上 §e" + Format.NumberCommaFormat(cheese) + "치즈",     // MongoDB에서 가져온 cheese 값
+                            "我 " + Format.NumberCommaFormat(money) + "원",  // MongoDB에서 가져온 money 값
                             "",
                             "安 접속자: " + Bukkit.getOnlinePlayers().size() + " 명",
                             "",
-                            "升 월드: 야생 채널#1"
+                            "升 월드: 야생 채널#1",
+                            "",
+                            season.getCurrentSeasonColor() + season.getCurrentSeasonName() + " " + season.getCurrentDay() + "일 &8|&7 이벤트 없음"
                     );
                 }
             }
