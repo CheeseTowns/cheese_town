@@ -41,14 +41,12 @@ public class ScoreBoard implements Listener {
                 Document playerData = UserAPI.getPlayerData(playerUUID);
 
                 if (playerData != null) {
-                    int money = playerData.getInteger("money", 0);  // 기본값 0
                     int cheese = playerData.getInteger("cheese", 0);  // 기본값 0
 
                     // 스코어보드 업데이트
                     updateBoard(board,
                             "",
                             "上 §e" + Format.NumberCommaFormat(cheese) + "치즈",     // MongoDB에서 가져온 cheese 값
-                            "我 " + Format.NumberCommaFormat(money) + "원",  // MongoDB에서 가져온 money 값
                             "",
                             "安 접속자: " + Bukkit.getOnlinePlayers().size() + " 명",
                             "",

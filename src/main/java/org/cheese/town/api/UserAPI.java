@@ -37,7 +37,6 @@ public class UserAPI {
         MongoCollection<Document> collection = mongoManager.getDatabase().getCollection("players");
         Document playerData = new Document("uuid", playerUUID.toString())
                 .append("playerName", playerName)
-                .append("money", 0)
                 .append("cheese", 0);
 
         collection.insertOne(playerData); // 데이터를 컬렉션에 저장
