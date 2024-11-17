@@ -14,6 +14,21 @@ public final class Main extends JavaPlugin implements Listener {
     @Override
     public void onEnable() {
         instance = this;
+
+        String pluginVersion = instance.getDescription().getVersion();
+        String gameVersion = instance.getDescription().getAPIVersion();
+
+        System.out.println("\n\n\033[38;2;255;223;0m /$$$$$$  / $$   /$$ /$$$$$$$$ /$$$$$$$$  /$$$$$$  /$$$$$$$$ /$$$$$$$$ /$$$$$$  /$$      /$$ /$$   /$$\n" +
+                "/ $$__  $$| $$  | $$| $$_____/| $$_____/ /$$__  $$| $$_____/|__  $$__//$$__  $$| $$  /$ | $$| $$$ | $$\n" +
+                "\033[38;2;217;196;51m| $$  \\__/| $$  | $$| $$      | $$      | $$  \\__/| $$         | $$  | $$  \\ $$| $$ /$$$| $$| $$$$| $$\n" +
+                "\033[38;2;179;169;102m| $$      | $$$$$$$$| $$$$$   | $$$$$   |  $$$$$$ | $$$$$      | $$  | $$  | $$| $$/$$ $$ $$| $$ $$ $$\n" +
+                "\033[38;2;141;142;153m| $$      | $$__  $$| $$__/   | $$__/    \\____  $$| $$__/      | $$  | $$  | $$| $$$$_  $$$$| $$  $$$$\n" +
+                "\033[38;2;103;165;204m| $$    $$| $$  | $$| $$      | $$       /$$  \\ $$| $$         | $$  | $$  | $$| $$$/ \\  $$$| $$\\  $$$\n" +
+                "\033[38;2;65;188;255m|  $$$$$$/| $$  | $$| $$$$$$$$| $$$$$$$$|  $$$$$$/| $$$$$$$$   | $$  |  $$$$$$/| $$/   \\  $$| $$ \\  $$\n" +
+                " \\______/ |__/  |__/|________/|________/ \\______/ |________/   |__/   \\______/ |__/     \\__/|__/  \\__/\033[0m\n\n" +
+                "          \033[38;2;255;223;0m• Plugin Version: \033[38;2;65;188;255m" + pluginVersion + "\n" +
+                "          \033[38;2;255;223;0m• Game Version: \033[38;2;65;188;255m" + gameVersion + "\033[0m");
+
         // MongoDB 연결
         MongoDB mongoManager = MongoDB.getInstance();
         mongoManager.connect("mongodb+srv://mascord:DefaultPassword@mascord.iob4z.mongodb.net/", "mydb");
