@@ -26,9 +26,6 @@ public final class Main extends JavaPlugin implements Listener {
 
         // 명령어 등록
         getCommand("귓").setExecutor(new Whisper());
-
-        // Season 시스템 인스턴스 생성 및 초기화
-        Season.getInstance(this);
     }
 
     @Override

@@ -10,35 +10,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fd98b560-68d6-4d3c-a1f3-4699cc5bd14d" name="변경" comment="fix: 프로젝트 패키지를 org.mascord.mascord_mc 에서 org.cheese.town으로 변경">
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/firomc_jar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/mascord_mc_jar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/chosu.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules/IdeaProjects.cheese_town.main.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/cheese/town/utils/Config.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/config.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/server.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/mascord_mc.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/cheese_town.main.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/mascord_mc.main.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/mascord_mc.test.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/org.mascord.mascord_mc.main.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/settings.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/settings.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/mascord/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/cheese/town/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/mascord/main/api/EconomyAPI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/cheese/town/api/EconomyAPI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/mascord/main/api/UserAPI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/cheese/town/api/UserAPI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/mascord/main/commands/Whisper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/cheese/town/commands/Whisper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/mascord/main/listeners/PlayerJoinListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/cheese/town/listeners/PlayerJoinListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/mascord/main/system/Season.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/cheese/town/system/Season.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/mascord/main/utils/Format.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/cheese/town/utils/Format.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/mascord/main/utils/MongoDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/cheese/town/utils/MongoDB.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/mascord/main/utils/ScoreBoard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/cheese/town/utils/ScoreBoard.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/plugin.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/plugin.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/cheese/town/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/cheese/town/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/cheese/town/utils/ScoreBoard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/cheese/town/utils/ScoreBoard.java" afterDir="false" />
     </list>
     <list id="22a6ab34-cf55-4c2c-a114-d998dd98757f" name="Changes by zetto06" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -131,6 +111,7 @@
     "Gradle.mascord_mc [testClasses].executor": "Run",
     "Gradle.mascord_mc.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true",
     "jdk.selected.JDK": "corretto-22",
@@ -139,7 +120,7 @@
     "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "reference.settingsdialog.project.gradle"
+    "settings.editor.selected.configurable": "preferences.pluginManager"
   },
   "keyToStringList": {
     "jdk.preference.JDK": [

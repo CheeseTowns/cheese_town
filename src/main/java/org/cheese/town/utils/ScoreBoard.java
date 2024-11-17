@@ -19,7 +19,6 @@ import java.util.UUID;
 
 public class ScoreBoard implements Listener {
     UserAPI UserAPI = new UserAPI();
-    Season season = Season.getInstance(Main.getInstance());
     private final Map<UUID, FastBoard> boards = new HashMap<>();
     private final String[] animatedTitles = {
             "§e치", "§e치즈", "§e치즈 타", "§e치즈 타운",
@@ -53,9 +52,7 @@ public class ScoreBoard implements Listener {
                             "",
                             "安 접속자: " + Bukkit.getOnlinePlayers().size() + " 명",
                             "",
-                            "升 월드: 야생 채널#1",
-                            "",
-                            season.getCurrentSeasonColor() + season.getCurrentSeasonName() + " " + season.getCurrentDay() + "일 &8|&7 이벤트 없음"
+                            "升 월드: 야생 채널#1"
                     );
                 }
             }

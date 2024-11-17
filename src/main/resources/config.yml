@@ -1,0 +1,9 @@
+# MongoDB 설정
+mongodb:
+  uri: "mongodb://localhost:27017"
+  database: "mydb"
+
+# 시즌 시스템 설정
+season:
+  currentDay: "0"
+  currentSeason: "SPRING"
